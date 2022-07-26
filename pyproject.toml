@@ -28,7 +28,7 @@ classifiers = [
     "Programming Language :: Python :: Implementation :: PyPy",
 ]
 packages = [
-    { include = "pyapp", from = "src" },
+    { include = "pytest_pyapp", from = "src" },
     { include = "tests", format = "sdist" },
 ]
 include = ["HISTORY"]
@@ -45,4 +45,4 @@ nox = "*"
 sphinx = "^4.5.0"
 
 [tool.poetry.plugins."pytest11"]
-"pytest-pyapp" = "pytest_pyapp"
+"pytest-pyapp" = "pytest_pyapp.plugin"
