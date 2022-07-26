@@ -10,7 +10,7 @@ def test_settings_fixture__where_settings_are_not_configured(pytester):
 
     result.stdout.fnmatch_lines(
         [
-            "*::test_sample FAILED*",
+            "*Failed: Settings have not been configured*",
         ]
     )
 
