@@ -1,0 +1,48 @@
+[build-system]
+requires = ["poetry>=1.0", "rtd-poetry-tmp"]
+build-backend = "rtd_poetry"
+
+[tool.poetry]
+name = "pytest-pyapp"
+version = "1.0.0"
+description = "pyTest plugin for testing pyApp applications."
+authors = ["Tim Savage <tim@savage.company>"]
+license = "BSD-3-Clause"
+readme = "README.md"
+repository = "https://github.com/pyapp-org/pytest-pyapp"
+documentation = "https://docs.pyapp.info"
+keywords = ["framework", "application", "pytest"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Framework :: Pytest",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+packages = [
+    { include = "pyapp", from = "src" },
+    { include = "tests", format = "sdist" },
+]
+include = ["HISTORY"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pyapp = "*"
+pytest = "^7.1.2"
+
+
+[tool.poetry.dev-dependencies]
+pytest-cov = "^3.0.0"
+nox = "*"
+sphinx = "^4.5.0"
+
+[tool.poetry.plugins."pytest11"]
+"pytest-pyapp" = "pytest_pyapp"
